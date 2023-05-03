@@ -4,7 +4,17 @@ const buttonEl = document.getElementById('button-el')
 let myTasks = []
 
 function addTask(tasks) {
+    let listItems = ''
     for (let i = 0; i < tasks.length; i++) {
-        ulEl.innerHTML += `<li>${tasks[i]}</li>`
+        listItems += `<li>${tasks[i]}</li>`
     }
+    ulEl.innerHTML = listItems
 }
+
+buttonEl.addEventListener('click', () => {
+    myTasks.push(inputEl.value)
+    inputEl.value = '';
+    addTask(myTasks)
+    
+
+})
