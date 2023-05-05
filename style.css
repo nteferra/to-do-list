@@ -10,6 +10,7 @@ div#header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: cursive;
 }
 
 div.input {
@@ -72,4 +73,15 @@ button.add-task {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+li {
+    margin: 1em;
+}
+
+hr {
+    background-color: rgb(116, 6, 6);
+    border: 2px solid rgb(116, 6, 6);
+    width: 90%;
+    margin-top: 1em;
 }
