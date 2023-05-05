@@ -5,7 +5,7 @@ const deleteBtn = document.getElementById('delete-btn')
 const tasksFromLocalStorage = JSON.parse(localStorage.getItem("myTasks"))
 let myTasks = []
 let date = document.querySelector('.date')
-date.textContent = Date()
+date.textContent = Date().substring(0, Date().length - 41)
 
 if (tasksFromLocalStorage) {
     myTasks = tasksFromLocalStorage
