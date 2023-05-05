@@ -15,7 +15,7 @@ if (tasksFromLocalStorage) {
 function addTask(tasks) {
     let listItems = ''
     for (let i = 0; i < tasks.length; i++) {
-        listItems += `<li>${tasks[i]}</li>`
+        listItems += `<li> > ${tasks[i]}</li>`
     }
     ulEl.innerHTML = listItems
 }
@@ -23,11 +23,12 @@ function addTask(tasks) {
 
 
 buttonEl.addEventListener('click', () => {
-    myTasks.push(inputEl.value)
-    inputEl.value = '';
-    localStorage.setItem("myTasks", JSON.stringify(myTasks) )
-    addTask(myTasks)
-    
+   if (inputEl.value) {
+         myTasks.push(inputEl.value)
+        inputEl.value = '';
+        localStorage.setItem("myTasks", JSON.stringify(myTasks) )
+        addTask(myTasks)
+    }    
 
 })
 
