@@ -19,6 +19,10 @@ div.input {
     justify-content: center;
 }
 
+li {
+    display: flex;
+}
+
 .add-task {
     align-items: center;
     justify-content: center;
@@ -53,12 +57,22 @@ button.add-task {
     border-radius: 8px;
 }
 
+
+
 button:hover {
     border: 2px solid white;
 }
 
 button:active {
     border: 2px solid blue;
+}
+
+button.clear {
+    background-color: rgb(116, 6, 6);
+    color: antiquewhite;
+    border-radius: 10px;
+    margin-left: auto;
+
 }
 
 #title {

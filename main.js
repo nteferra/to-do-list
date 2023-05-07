@@ -6,6 +6,8 @@ const tasksFromLocalStorage = JSON.parse(localStorage.getItem("myTasks"))
 let myTasks = []
 let date = document.querySelector('.date')
 date.textContent = Date().substring(0, Date().length - 41)
+let clearBtn = document.getElementsByClassName('clear')
+
 
 if (tasksFromLocalStorage) {
     myTasks = tasksFromLocalStorage
@@ -15,7 +17,7 @@ if (tasksFromLocalStorage) {
 function addTask(tasks) {
     let listItems = ''
     for (let i = 0; i < tasks.length; i++) {
-        listItems += `<li> > ${tasks[i]}</li>`
+        listItems += `<li> > ${tasks[i]}<button class="clear">x</button></li>`;
     }
     ulEl.innerHTML = listItems
 }
