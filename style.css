@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(to bottom right, aquamarine, antiquewhite );
+    background-image: linear-gradient(to bottom right, rgb(134, 186, 168), antiquewhite );
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
@@ -102,6 +102,7 @@ button.del:active {
     list-style-type: none;
     color: rgb(116, 6, 6);
     padding-right: 40px;
+    max-width: 100%;
 }
 
 .container {
@@ -111,6 +112,7 @@ button.del:active {
 
 li {
     margin: 1em;
+    max-width: 100%;
 }
 
 hr {
