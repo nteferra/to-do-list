@@ -16,9 +16,19 @@ if (tasksFromLocalStorage) {
 function addTask(tasks) {
     let listItems = ''
     for (let i = 0; i < tasks.length; i++) {
-        listItems += `<li> > ${tasks[i]}<button class="del" onclick="this.parentElement.remove()">X</button></li>`;
+        listItems += `<li> > ${tasks[i]}<button class="del" onclick="deleteTask(${i})">X</button></li>`;
     }
     ulEl.innerHTML = listItems
+}
+
+function deleteTask(index) {
+    let taskEl = document.querySelectorAll('li')[index];
+    taskEl.remove();
+
+    myTasks.splice(index, 1);
+
+    localStorage.setItem('myTasks', JSON.stringify(myTasks));
+
 }
 
 
