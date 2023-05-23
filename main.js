@@ -14,11 +14,19 @@ if (tasksFromLocalStorage) {
 }
 
 function addTask(tasks) {
-    let listItems = ''
+    ulEl.innerHTML = ''
     for (let i = 0; i < tasks.length; i++) {
-        listItems += `<li> > ${tasks[i]}<button class="del" onclick="deleteTask(${i})">X</button></li>`;
+        let liEl = document.createElement('li')
+        liEl.textContent = `> ${tasks[i]}`;
+
+        let delBtn = document.createElement('button');
+        delBtn.textContent = 'X';
+        delBtn.classList.add('del');
+        delBtn.addEventListener('click', () => deleteTask(i));
+
+        liEl.appendChild(delBtn);
+        ulEl.appendChild(liEl);
     }
-    ulEl.innerHTML = listItems
 }
 
 function deleteTask(index) {
