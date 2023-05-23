@@ -30,13 +30,9 @@ function addTask(tasks) {
 }
 
 function deleteTask(index) {
-    let taskEl = document.querySelectorAll('li')[index];
-    taskEl.remove();
-
     myTasks.splice(index, 1);
-
     localStorage.setItem('myTasks', JSON.stringify(myTasks));
-
+    addTask(myTasks);
 }
 
 
